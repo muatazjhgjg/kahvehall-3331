@@ -3,542 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kahvehall - Premium Cafe & Bistro Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #1a4d3a;
-            --secondary: #d4a574;
-            --dark: #1a1a1a;
-            --light: #f8f5f0;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(26, 77, 58, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--white);
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a4d3a" width="1200" height="800"/></svg>');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.3s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--secondary);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 6rem 5%;
-            background: var(--light);
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            height: 400px;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            padding: 2rem;
-            transform: translateY(100%);
-            transition: transform 0.4s;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-
-        .gallery-overlay h3 {
-            color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Features */
-        .features {
-            padding: 6rem 5%;
-            background: var(--white);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--light);
-            border-radius: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* Menu Section */
-        .menu {
-            padding: 6rem 5%;
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .menu-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .menu-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        /* Contact */
-        .contact {
-            padding: 6rem 5%;
-            background: var(--light);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .contact-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card a {
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-card a:hover {
-            color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: var(--white);
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        footer h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 30px;
-            height: 3px;
-            background: var(--white);
-            margin: 4px 0;
-            transition: 0.3s;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 80px;
-                flex-direction: column;
-                background: var(--primary);
-                width: 100%;
-                padding: 2rem;
-                transition: 0.3s;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>Kahvehall | Premium Cafe & Bistro - Ankara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">KAHVEHALL</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Ana Sayfa</a></li>
-            <li><a href="#gallery">Galeri</a></li>
-            <li><a href="#menu">Menü</a></li>
-            <li><a href="#contact">İletişim</a></li>
-        </ul>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">KAHVEHALL</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="menu.html">Menü</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <section class="hero" id="home">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>KAHVEHALL</h1>
-            <p>Premium Cafe & Bistro Experience in Ankara</p>
-            <a href="#contact" class="cta-button">Bizi Ziyaret Edin</a>
+            <h1 class="hero-title">KAHVEHALL</h1>
+            <p class="hero-subtitle">Premium Coffee Experience in Ankara</p>
+            <a href="menu.html" class="btn-primary">Menümüzü Keşfedin</a>
         </div>
     </section>
 
-    <section class="gallery" id="gallery">
-        <h2 class="section-title">Atmosferimiz</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%231a4d3a' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EKahvehall Dış Görünüm%3C/text%3E%3C/svg%3E" alt="Kahvehall Exterior">
-                <div class="gallery-overlay">
-                    <h3>Modern Mimari</h3>
-                    <p>Şık ve çağdaş tasarım</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23d4a574' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ERahat İç Mekan%3C/text%3E%3C/svg%3E" alt="Interior">
-                <div class="gallery-overlay">
-                    <h3>Rahat İç Mekan</h3>
-                    <p>Konforlu oturma alanları</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%232a6b50' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EÖzel Kahvelerimiz%3C/text%3E%3C/svg%3E" alt="Coffee">
-                <div class="gallery-overlay">
+    <!-- Features -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">☕</div>
                     <h3>Özel Kahveler</h3>
-                    <p>Profesyonel barista hizmeti</p>
+                    <p>Türk Kahvesi, Dibek, Damla Sakızlı ve daha fazlası</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Canlı Müzik</h3>
+                    <p>Her hafta sonu özel performanslar</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Lezzetli Yemekler</h3>
+                    <p>Kahvaltıdan akşam yemeğine</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Açık Alan</h3>
+                    <p>Geniş ve rahat terası</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%233d7c5c' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ELezzetli Atıştırmalıklar%3C/text%3E%3C/svg%3E" alt="Food">
-                <div class="gallery-overlay">
-                    <h3>Lezzetli Atıştırmalıklar</h3>
-                    <p>Taze ve sağlıklı</p>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="gallery-preview">
+        <div class="container">
+            <h2 class="section-title">Atmosferimiz</h2>
+            <div class="gallery-grid-home">
+                <div class="gallery-item-home">
+                    <img src="https://via.placeholder.com/400x400/1a4d3a/ffffff?text=Dis+Gorunum" alt="Dış Görünüm">
+                </div>
+                <div class="gallery-item-home">
+                    <img src="https://via.placeholder.com/400x400/2a6b50/ffffff?text=Ic+Mekan" alt="İç Mekan">
+                </div>
+                <div class="gallery-item-home">
+                    <img src="https://via.placeholder.com/400x400/d4a574/ffffff?text=Kahve" alt="Kahve">
                 </div>
             </div>
+            <a href="galeri.html" class="btn-secondary">Tüm Galeriyi Gör</a>
         </div>
     </section>
 
-    <section class="features">
-        <h2 class="section-title">Neden Kahvehall?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🎵</div>
-                <h3>Canlı Müzik</h3>
-                <p>Hafta sonları canlı performanslar ve özel etkinlikler</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">☕</div>
-                <h3>Premium Kahve</h3>
-                <p>Dünya çapında seçilmiş özel kahve çekirdekleri</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌿</div>
-                <h3>Açık Alan</h3>
-                <p>Geniş açık hava terası ile doğayla iç içe</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👨‍👩‍👧‍👦</div>
-                <h3>Aile Dostu</h3>
-                <p>Aileler ve gruplar için özel alanlar</p>
-            </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Sizi Bekliyoruz</h2>
+            <p>Her gün 06:00 - 00:00 saatleri arasında açığız</p>
+            <a href="iletisim.html" class="btn-primary">Bize Ulaşın</a>
         </div>
     </section>
 
-    <section class="menu" id="menu">
-        <h2 class="section-title" style="color: white;">Özel Menümüz</h2>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <h3>☕ Signature Kahveler</h3>
-                <p>• Türk Kahvesi<br>• Dibek Kahvesi<br>• Damla Sakızlı<br>• Hazelnut Special</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>KAHVEHALL</h3>
+                    <p>Premium Cafe & Bistro</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="menu.html">Menü</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>İletişim</h4>
+                    <p>Demetgül, Bağdat Cd. 26/B<br>06200 Yenimahalle/Ankara</p>
+                    <p>Tel: (0312) 335 38 66</p>
+                </div>
             </div>
-            <div class="menu-card">
-                <h3>☕ Espresso Bar</h3>
-                <p>• Espresso Double<br>• Cappuccino<br>• Latte<br>• Americano</p>
-            </div>
-            <div class="menu-card">
-                <h3>🍰 Tatlılar</h3>
-                <p>• Ev Yapımı Pastalar<br>• Cheesecake<br>• Brownie<br>• San Sebastian</p>
-            </div>
-            <div class="menu-card">
-                <h3>🥪 Kahvaltı & Brunch</h3>
-                <p>• Serpme Kahvaltı<br>• Avokado Toast<br>• Waffle<br>• Pancake</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2 class="section-title">Bize Ulaşın</h2>
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <h3>Adres</h3>
-                <p>Demetgül, Bağdat Cd. 26/B<br>06200 Yenimahalle/Ankara</p>
-            </div>
-            <div class="contact-card">
-                <div class="contact-icon">📞</div>
-                <h3>Telefon</h3>
-                <p><a href="tel:+903123353866">(0312) 335 38 66</a></p>
-            </div>
-            <div class="contact-card">
-                <div class="contact-icon">⏰</div>
-                <h3>Çalışma Saatleri</h3>
-                <p>Her Gün<br>06:00 - 00:00</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kahvehall. Tüm hakları saklıdır.</p>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <h2>KAHVEHALL</h2>
-        <p>Premium Cafe & Bistro Experience</p>
-        <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Kahvehall. Tüm hakları saklıdır.</p>
     </footer>
 
-    <script>
-        // Mobile menu
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                navLinks.classList.remove('active');
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(26, 77, 58, 0.98)';
-            } else {
-                nav.style.background = 'rgba(26, 77, 58, 0.95)';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
