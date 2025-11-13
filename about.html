@@ -3,232 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kahvehall hakkında - Hikayemiz, misyonumuz ve vizyonumuz">
-    <title>Hakkımızda | Kahvehall - Premium Cafe & Bistro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Hakkımızda - Kahvehall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a4d3a;
+    --secondary: #d4a574;
+    --dark: #1a1a1a;
+    --light: #f8f5f0;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(26, 77, 58, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: var(--white);
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Page Header */
+.page-header {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 80px;
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+}
+
+/* Section */
+.section {
+    padding: 6rem 5%;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary);
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: var(--primary);
+        width: 100%;
+        padding: 2rem;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .about-card h3 {
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-card p {
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-coffee"></i>
-                <span>KAHVEHALL</span>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
-                <li><a href="about.html" class="nav-link active">Hakkımızda</a></li>
-                <li><a href="menu.html" class="nav-link">Menü</a></li>
-                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
-                <li><a href="contact.html" class="nav-link">İletişim</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="tel:+903123353866" class="btn-call">
-                    <i class="fas fa-phone"></i>
-                    <span>Ara</span>
-                </a>
-                <button class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+    <nav>
+        <a href="index.html" class="logo">KAHVEHALL</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html" class="active">Hakkımızda</a></li>
+            <li><a href="menu.html">Menü</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="page-header-content">
+    <div class="page-header">
+        <div>
             <h1>Hakkımızda</h1>
-            <p>Kahvehall'ın hikayesi ve değerleri</p>
+            <p>Kahvehall'ın Hikayesi</p>
         </div>
-    </section>
+    </div>
 
-    <!-- About Story -->
-    <section class="about-story">
-        <div class="container">
+    <section class="section">
+        <div class="about-content">
+            <h2>Kahvehall Hikayesi</h2>
+            <p>Kahvehall, kahve tutkusu ve misafirperverlik anlayışını birleştirerek Ankara Yenimahalle'de kapılarını açtı. Modern mimari ve sıcak atmosferimizle, her ziyaretçimize özel bir deneyim sunuyoruz.</p>
+            <p>Özenle seçilmiş kahve çekirdeklerimiz ve profesyonel barista ekibimizle, her fincanın bir sanat eseri olmasını sağlıyoruz. Türk Kahvesi'nden Dibek'e, Espresso'dan Latte'ye kadar geniş kahve yelpazemizle damak zevkinize hitap ediyoruz.</p>
+            <p>Sadece bir cafe değil, aynı zamanda buluşma noktası, çalışma alanı ve sosyal bir mekan olarak hizmet veriyoruz. Canlı müzik performansları, rahat oturma alanları ve açık hava terasımızla her anınızı özel kılıyoruz.</p>
+
             <div class="about-grid">
-                <div class="about-image" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800" alt="Kahvehall İç Mekan">
+                <div class="about-card">
+                    <h3>50+</h3>
+                    <p>Menü Çeşidi</p>
                 </div>
-                <div class="about-content" data-aos="fade-left">
-                    <span class="section-label">Hikayemiz</span>
-                    <h2>Kahvenin Tutkuyla Buluştuğu Yer</h2>
-                    <p>Kahvehall, 2025 yılında Ankara Yenimahalle'de kahve tutkusu ve misafirperverlik anlayışını birleştirerek kuruldu.</p>
-                    <p>Amacımız, her fincan kahvenin bir sanat eseri olduğu, her ziyaretin özel bir deneyime dönüştüğü bir mekan yaratmaktı. Modern mimari ve sıcak atmosferimizle, misafirlerimize sadece kahve değil, bir yaşam tarzı sunuyoruz.</p>
-                    <p>Özenle seçilmiş kahve çekirdeklerimiz, profesyonel barista ekibimiz ve samimi hizmet anlayışımızla Ankara'nın en seçkin cafe'lerinden biri olmayı hedefliyoruz.</p>
+                <div class="about-card">
+                    <h3>100%</h3>
+                    <p>Taze Ürünler</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission & Vision -->
-    <section class="mission-vision">
-        <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card" data-aos="fade-up">
-                    <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Misyonumuz</h3>
-                    <p>Kaliteli kahve kültürünü Ankara'ya taşımak ve her misafirimize unutulmaz bir deneyim sunmak. Geleneksel lezzetlerle modern sunumu birleştirerek, kahvenin en özel halini yaşatmak.</p>
-                </div>
-                <div class="mv-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Vizyonumuz</h3>
-                    <p>Türkiye'nin en prestijli cafe zincirlerinden biri olmak ve kahve severlerin ilk tercihi haline gelmek. Sürekli yenilik ve kalite standartlarımızla sektöre öncülük etmek.</p>
+                <div class="about-card">
+                    <h3>18 Saat</h3>
+                    <p>Hizmet</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values -->
-    <section class="values-section">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-label">Değerlerimiz</span>
-                <h2 class="section-title">Bizim İçin Önemli Olan</h2>
-            </div>
-            <div class="values-grid">
-                <div class="value-card" data-aos="zoom-in">
-                    <i class="fas fa-award"></i>
-                    <h3>Kalite</h3>
-                    <p>Kullandığımız her üründe en yüksek kalite standartları</p>
-                </div>
-                <div class="value-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-heart"></i>
-                    <h3>Tutku</h3>
-                    <p>Kahve sevgimiz ve işimize olan bağlılığımız</p>
-                </div>
-                <div class="value-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-users"></i>
-                    <h3>Misafirperverlik</h3>
-                    <p>Her misafirimizi ailemizin bir parçası gibi görüyoruz</p>
-                </div>
-                <div class="value-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Sürdürülebilirlik</h3>
-                    <p>Çevre dostu uygulamalar ve sorumlu kaynak kullanımı</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-label">Ekibimiz</span>
-                <h2 class="section-title">Profesyonel Kadromuz</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-member" data-aos="fade-up">
-                    <div class="team-avatar">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Genel Müdür</h3>
-                    <p>15+ yıl deneyim</p>
-                </div>
-                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="team-avatar">
-                        <i class="fas fa-mug-hot"></i>
-                    </div>
-                    <h3>Baş Barista</h3>
-                    <p>Uluslararası sertifikalı</p>
-                </div>
-                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-                    <div class="team-avatar">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Şef</h3>
-                    <p>Gurme mutfak uzmanı</p>
-                </div>
-                <div class="team-member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="team-avatar">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Servis Ekibi</h3>
-                    <p>Profesyonel ve güler yüzlü</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Bizi Ziyaret Edin</h2>
-            <p>Kahvehall deneyimini yaşamak için sizi bekliyoruz</p>
-            <div class="cta-buttons">
-                <a href="menu.html" class="btn btn-primary">
-                    <i class="fas fa-book-open"></i> Menümüzü İnceleyin
-                </a>
-                <a href="contact.html" class="btn btn-outline-white">
-                    <i class="fas fa-map-marked-alt"></i> Yol Tarifi
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <i class="fas fa-coffee"></i>
-                        <span>KAHVEHALL</span>
-                    </div>
-                    <p>Ankara'nın en seçkin cafe ve bistrosu. Premium kahve deneyimi.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Hızlı Linkler</h4>
-                    <ul>
-                        <li><a href="index.html"><i class="fas fa-angle-right"></i> Ana Sayfa</a></li>
-                        <li><a href="about.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
-                        <li><a href="menu.html"><i class="fas fa-angle-right"></i> Menü</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Galeri</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Çalışma Saatleri</h4>
-                    <ul class="hours-list">
-                        <li><i class="far fa-clock"></i> Pazartesi - Pazar</li>
-                        <li><strong>06:00 - 00:00</strong></li>
-                        <li style="margin-top: 1rem;"><i class="fas fa-phone"></i> Rezervasyon:</li>
-                        <li><strong>(0312) 335 38 66</strong></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Adres</h4>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i> Demetgül, Bağdat Cd. 26/B</li>
-                        <li>06200 Yenimahalle/Ankara</li>
-                        <li style="margin-top: 1rem;"><i class="fas fa-envelope"></i> info@kahvehall.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Kahvehall. Tüm hakları saklıdır.</p>
-            </div>
-        </div>
+    <footer>
+        <h2>KAHVEHALL</h2>
+        <p>Demetgül, Bağdat Cd. 26/B, Yenimahalle/Ankara</p>
+        <p>(0312) 335 38 66</p>
+        <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Kahvehall. Tüm hakları saklıdır.</p>
     </footer>
 
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="script.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
