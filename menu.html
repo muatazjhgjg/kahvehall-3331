@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kahvehall menü - Özel kahveler, tatlılar ve yemekler">
+    <title>Menü | Kahvehall - Premium Cafe & Bistro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>KAHVEHALL</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="about.html" class="nav-link">Hakkımızda</a></li>
+                <li><a href="menu.html" class="nav-link active">Menü</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="contact.html" class="nav-link">İletişim</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+903123353866" class="btn-call">
+                    <i class="fas fa-phone"></i>
+                    <span>Ara</span>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Menümüz</h1>
+            <p>Özel lezzetlerimizi keşfedin</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-section">
+        <div class="container">
+
+            <!-- Turkish Coffee -->
+            <div class="menu-category" data-aos="fade-up">
+                <div class="category-header">
+                    <i class="fas fa-mug-hot"></i>
+                    <h2>Türk Kahveleri</h2>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Türk Kahvesi">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Türk Kahvesi</h3>
+                            <p>Geleneksel lezzet, özel sunum</p>
+                            <span class="menu-badge">Sade / Şekerli / Orta</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" alt="Dibek Kahvesi">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Dibek Kahvesi</h3>
+                            <p>Özel taş dibekte öğütülmüş</p>
+                            <span class="menu-badge popular">Popüler</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400" alt="Damla Sakızlı">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Damla Sakızlı Kahve</h3>
+                            <p>Benzersiz lezzet deneyimi</p>
+                            <span class="menu-badge special">Özel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Espresso Based -->
+            <div class="menu-category" data-aos="fade-up">
+                <div class="category-header">
+                    <i class="fas fa-coffee"></i>
+                    <h2>Espresso Bazlı</h2>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400" alt="Espresso">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Espresso</h3>
+                            <p>İtalyan klasiği</p>
+                            <span class="menu-badge">Single / Double</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Latte">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Latte</h3>
+                            <p>Kremalı espresso</p>
+                            <span class="menu-badge">Latte Art</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400" alt="Cappuccino">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Cappuccino</h3>
+                            <p>Köpüklü lezzet</p>
+                            <span class="menu-badge popular">Popüler</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400" alt="Americano">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Americano</h3>
+                            <p>Uzun espresso</p>
+                            <span class="menu-badge">Hot / Iced</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1530373239216-42518e6b4063?w=400" alt="Mocha">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Mocha</h3>
+                            <p>Çikolatalı espresso</p>
+                            <span class="menu-badge special">Özel</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400" alt="Caramel">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Caramel Latte</h3>
+                            <p>Karamelli lezzet</p>
+                            <span class="menu-badge popular">Popüler</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakfast -->
+            <div class="menu-category" data-aos="fade-up">
+                <div class="category-header">
+                    <i class="fas fa-bread-slice"></i>
+                    <h2>Kahvaltı & Brunch</h2>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400" alt="Kahvaltı">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Serpme Kahvaltı</h3>
+                            <p>Zengin içerik, taze ürünler</p>
+                            <span class="menu-badge special">1-2 Kişilik</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Waffle">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Waffle</h3>
+                            <p>Taze meyve ve özel soslar</p>
+                            <span class="menu-badge popular">Popüler</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=400" alt="Pancake">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Pancake</h3>
+                            <p>Akçaağaç şurubu ile</p>
+                            <span class="menu-badge">3 Adet</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400" alt="Avokado Toast">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Avokado Toast</h3>
+                            <p>Sağlıklı ve lezzetli</p>
+                            <span class="menu-badge">Vegan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category" data-aos="fade-up">
+                <div class="category-header">
+                    <i class="fas fa-birthday-cake"></i>
+                    <h2>Tatlılar</h2>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Cheesecake">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Cheesecake</h3>
+                            <p>Ev yapımı, çilekli</p>
+                            <span class="menu-badge popular">Popüler</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400" alt="Brownie">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Brownie</h3>
+                            <p>Sıcak, vanilyalı dondurma ile</p>
+                            <span class="menu-badge special">Özel</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400" alt="Tiramisu">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Tiramisu</h3>
+                            <p>İtalyan klasiği</p>
+                            <span class="menu-badge">İtalyan</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1464347744102-11db6282f854?w=400" alt="San Sebastian">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>San Sebastian</h3>
+                            <p>Yanık cheesecake</p>
+                            <span class="menu-badge popular">Popüler</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Lezzetlerimizi Denemeye Hazır mısınız?</h2>
+            <p>Hemen rezervasyon yapın veya yol tarifi alın</p>
+            <div class="cta-buttons">
+                <a href="tel:+903123353866" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i> Rezervasyon: (0312) 335 38 66
+                </a>
+                <a href="contact.html" class="btn btn-outline-white">
+                    <i class="fas fa-map-marked-alt"></i> Yol Tarifi Al
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-coffee"></i>
+                        <span>KAHVEHALL</span>
+                    </div>
+                    <p>Ankara'nın en seçkin cafe ve bistrosu. Premium kahve deneyimi.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-angle-right"></i> Ana Sayfa</a></li>
+                        <li><a href="about.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
+                        <li><a href="menu.html"><i class="fas fa-angle-right"></i> Menü</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Çalışma Saatleri</h4>
+                    <ul class="hours-list">
+                        <li><i class="far fa-clock"></i> Pazartesi - Pazar</li>
+                        <li><strong>06:00 - 00:00</strong></li>
+                        <li style="margin-top: 1rem;"><i class="fas fa-phone"></i> Rezervasyon:</li>
+                        <li><strong>(0312) 335 38 66</strong></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Adres</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Demetgül, Bağdat Cd. 26/B</li>
+                        <li>06200 Yenimahalle/Ankara</li>
+                        <li style="margin-top: 1rem;"><i class="fas fa-envelope"></i> info@kahvehall.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kahvehall. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
