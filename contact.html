@@ -3,298 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim - Kahvehall</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary: #1a4d3a;
-    --secondary: #d4a574;
-    --dark: #1a1a1a;
-    --light: #f8f5f0;
-    --white: #ffffff;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--dark);
-    line-height: 1.6;
-}
-
-/* Navigation */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background: rgba(26, 77, 58, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1.2rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: 2px;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    gap: 3rem;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--secondary);
-    transition: width 0.3s;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    width: 30px;
-    height: 3px;
-    background: var(--white);
-    margin: 4px 0;
-    transition: 0.3s;
-}
-
-/* Page Header */
-.page-header {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    margin-top: 80px;
-}
-
-.page-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.page-header p {
-    font-size: 1.3rem;
-}
-
-/* Section */
-.section {
-    padding: 6rem 5%;
-}
-
-.section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary);
-}
-
-/* Footer */
-footer {
-    background: var(--dark);
-    color: var(--white);
-    padding: 3rem 5%;
-    text-align: center;
-}
-
-footer h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 80px;
-        flex-direction: column;
-        background: var(--primary);
-        width: 100%;
-        padding: 2rem;
-        transition: 0.3s;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .page-header h1 {
-        font-size: 2.5rem;
-    }
-}
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-card {
-            background: var(--light);
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card p {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-card a {
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-card a:hover {
-            color: var(--primary);
-        }
-
-        .map-container {
-            margin-top: 4rem;
-            height: 400px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-    </style>
+    <meta name="description" content="Kahvehall İletişim - Bize ulaşın, rezervasyon yapın.">
+    <title>İletişim | Kahvehall - Premium Cafe & Bistro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">KAHVEHALL</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımızda</a></li>
-            <li><a href="menu.html">Menü</a></li>
-            <li><a href="gallery.html">Galeri</a></li>
-            <li><a href="contact.html" class="active">İletişim</a></li>
-        </ul>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>KAHVEHALL</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="about.html" class="nav-link">Hakkımızda</a></li>
+                <li><a href="menu.html" class="nav-link">Menü</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="contact.html" class="nav-link active">İletişim</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+903123353866" class="btn-call">
+                    <i class="fas fa-phone"></i>
+                    <span>Ara</span>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <div class="page-header">
-        <div>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
             <h1>İletişim</h1>
             <p>Bize Ulaşın</p>
-        </div>
-    </div>
-
-    <section class="section">
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <h3>Adres</h3>
-                <p>Demetgül, Bağdat Cd. 26/B</p>
-                <p>06200 Yenimahalle/Ankara</p>
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+                <span>/</span>
+                <span>İletişim</span>
             </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">📞</div>
-                <h3>Telefon</h3>
-                <p><a href="tel:+903123353866">(0312) 335 38 66</a></p>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">Rezervasyon için arayabilirsiniz</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">⏰</div>
-                <h3>Çalışma Saatleri</h3>
-                <p><strong>Pazartesi - Pazar</strong></p>
-                <p>06:00 - 00:00</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">Her gün açığız</p>
-            </div>
-        </div>
-
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.3744937716583!2d32.817!3d39.967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDU4JzAxLjIiTiAzMsKwNDknMDEuMiJF!5e0!3m2!1str!2str!4v1234567890"
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
         </div>
     </section>
 
-    <footer>
-        <h2>KAHVEHALL</h2>
-        <p>Demetgül, Bağdat Cd. 26/B, Yenimahalle/Ankara</p>
-        <p>(0312) 335 38 66</p>
-        <p style="margin-top: 1rem; opacity: 0.7;">© 2025 Kahvehall. Tüm hakları saklıdır.</p>
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-info-card" data-aos="fade-up">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Adres</h3>
+                    <p>Demetgül, Bağdat Cd. 26/B<br>06200 Yenimahalle/Ankara</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-link">
+                        Haritada Gör <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="contact-info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+903123353866">(0312) 335 38 66</a></p>
+                    <p class="info-subtitle">Rezervasyon & Bilgi</p>
+                    <a href="tel:+903123353866" class="btn-link">
+                        Hemen Ara <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="contact-info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Çalışma Saatleri</h3>
+                    <p><strong>Her Gün</strong></p>
+                    <p>06:00 - 00:00</p>
+                    <p class="info-subtitle">18 Saat Hizmet</p>
+                </div>
+
+                <div class="contact-info-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>E-posta</h3>
+                    <p><a href="mailto:info@kahvehall.com">info@kahvehall.com</a></p>
+                    <p class="info-subtitle">7/24 Destek</p>
+                    <a href="mailto:info@kahvehall.com" class="btn-link">
+                        Mail Gönder <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-grid">
+                <div class="contact-form-content" data-aos="fade-right">
+                    <span class="section-label">Mesaj Gönderin</span>
+                    <h2>Bizimle İletişime Geçin</h2>
+                    <p>Sorularınız, önerileriniz veya rezervasyon talepleriniz için formu doldurun. En kısa sürede size dönüş yapacağız.</p>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Ad Soyad</label>
+                                <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> E-posta</label>
+                                <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone"><i class="fas fa-phone"></i> Telefon</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(5XX) XXX XX XX">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject"><i class="fas fa-tag"></i> Konu</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="reservation">Rezervasyon</option>
+                                    <option value="catering">Catering</option>
+                                    <option value="event">Etkinlik</option>
+                                    <option value="complaint">Şikayet</option>
+                                    <option value="other">Diğer</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Mesajınız</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Mesaj Gönder
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-map" data-aos="fade-left">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.2509157476254!2d32.76!3d39.98!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDU4JzQ4LjAiTiAzMsKwNDUnMzYuMCJF!5e0!3m2!1str!2str!4v1234567890"
+                        width="100%" 
+                        height="600" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Sosyal Medya</span>
+                <h2 class="section-title">Bizi Takip Edin</h2>
+            </div>
+            <div class="social-media-grid">
+                <a href="#" class="social-card facebook" data-aos="zoom-in">
+                    <i class="fab fa-facebook-f"></i>
+                    <h3>Facebook</h3>
+                    <p>Bizi Facebook'ta takip edin</p>
+                </a>
+                <a href="#" class="social-card instagram" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>Fotoğraflarımızı görün</p>
+                </a>
+                <a href="#" class="social-card twitter" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fab fa-twitter"></i>
+                    <h3>Twitter</h3>
+                    <p>Güncel haberler</p>
+                </a>
+                <a href="#" class="social-card youtube" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube</h3>
+                    <p>Videolarımızı izleyin</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-coffee"></i>
+                        <span>KAHVEHALL</span>
+                    </div>
+                    <p>Ankara'nın en seçkin cafe ve bistrosu. Premium kahve deneyimi.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-angle-right"></i> Ana Sayfa</a></li>
+                        <li><a href="about.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
+                        <li><a href="menu.html"><i class="fas fa-angle-right"></i> Menü</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Çalışma Saatleri</h4>
+                    <ul class="hours-list">
+                        <li><i class="far fa-clock"></i> Pazartesi - Pazar</li>
+                        <li><strong>06:00 - 00:00</strong></li>
+                        <li style="margin-top: 1rem;"><i class="fas fa-phone"></i> Rezervasyon:</li>
+                        <li><strong>(0312) 335 38 66</strong></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Adres</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Demetgül, Bağdat Cd. 26/B</li>
+                        <li>06200 Yenimahalle/Ankara</li>
+                        <li style="margin-top: 1rem;"><i class="fas fa-envelope"></i> info@kahvehall.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kahvehall. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
     </footer>
 
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mesajınız gönderildi! En kısa sürede size dönüş yapacağız.');
+            this.reset();
         });
     </script>
 </body>
