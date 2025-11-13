@@ -3,93 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kahvehall | Premium Cafe & Bistro - Ankara</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Kahvehall - Ankara'nın en seçkin cafe ve bistrosu. Özel kahveler, canlı müzik ve eşsiz atmosfer.">
+    <title>Kahvehall | Premium Cafe & Bistro - Ankara Yenimahalle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">KAHVEHALL</div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Ana Sayfa</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="menu.html">Menü</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
+            <a href="index.html" class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>KAHVEHALL</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
+                <li><a href="about.html" class="nav-link">Hakkımızda</a></li>
+                <li><a href="menu.html" class="nav-link">Menü</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="contact.html" class="nav-link">İletişim</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <a href="tel:+903123353866" class="btn-call">
+                    <i class="fas fa-phone"></i>
+                    <span>Ara</span>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">KAHVEHALL</h1>
-            <p class="hero-subtitle">Premium Coffee Experience in Ankara</p>
-            <a href="menu.html" class="btn-primary">Menümüzü Keşfedin</a>
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920');">
+                <div class="hero-content">
+                    <h1 class="hero-title">Kahvenin En Özel Hali</h1>
+                    <p class="hero-subtitle">Ankara'nın kalbinde premium cafe deneyimi</p>
+                    <div class="hero-buttons">
+                        <a href="menu.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i> Menüyü İncele
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary">
+                            <i class="fas fa-map-marker-alt"></i> Bizi Ziyaret Edin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features-section">
+    <!-- Features Section -->
+    <section class="features" id="features">
         <div class="container">
+            <div class="section-header">
+                <span class="section-label">Neden Kahvehall?</span>
+                <h2 class="section-title">Özel Deneyimimiz</h2>
+            </div>
             <div class="features-grid">
-                <div class="feature-box">
-                    <div class="feature-icon">☕</div>
-                    <h3>Özel Kahveler</h3>
-                    <p>Türk Kahvesi, Dibek, Damla Sakızlı ve daha fazlası</p>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h3>Premium Kahveler</h3>
+                    <p>Türk Kahvesi, Dibek, Damla Sakızlı ve dünya çapında özel harmanlar</p>
                 </div>
-                <div class="feature-box">
-                    <div class="feature-icon">🎵</div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
                     <h3>Canlı Müzik</h3>
-                    <p>Her hafta sonu özel performanslar</p>
+                    <p>Her hafta sonu özel sanatçılar ve akustik performanslar</p>
                 </div>
-                <div class="feature-box">
-                    <div class="feature-icon">🍽️</div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
                     <h3>Lezzetli Yemekler</h3>
-                    <p>Kahvaltıdan akşam yemeğine</p>
+                    <p>Serpme kahvaltıdan özel tatlılara kadar zengin menü</p>
                 </div>
-                <div class="feature-box">
-                    <div class="feature-icon">🌿</div>
-                    <h3>Açık Alan</h3>
-                    <p>Geniş ve rahat terası</p>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Açık Hava Terası</h3>
+                    <p>Geniş ve ferah bahçe alanında huzurlu anlar</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800" alt="Kahvehall İç Mekan">
+                    <div class="about-badge">
+                        <i class="fas fa-award"></i>
+                        <span>2025</span>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-label">Hikayemiz</span>
+                    <h2>Ankara'nın En Seçkin Cafe'si</h2>
+                    <p>Kahvehall, kahve tutkusu ve misafirperverlik anlayışını birleştirerek 2025 yılında Ankara Yenimahalle'de kapılarını açtı.</p>
+                    <p>Modern mimari ve sıcak atmosferimizle, her ziyaretçimize özel bir deneyim sunuyoruz. Özenle seçilmiş kahve çekirdeklerimiz ve profesyonel barista ekibimizle, her fincanın bir sanat eseri olmasını sağlıyoruz.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Menü Çeşidi</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Taze Ürünler</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">18</span>
+                            <span class="stat-label">Saat Açık</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-outline">
+                        <span>Daha Fazla</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section class="menu-preview">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Lezzetlerimiz</span>
+                <h2 class="section-title">Öne Çıkan Menü</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item" data-aos="zoom-in">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Türk Kahvesi">
+                        <div class="menu-badge">Özel</div>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Türk Kahvesi</h3>
+                        <p>Geleneksel lezzet, özel sunum</p>
+                        <div class="menu-footer">
+                            <span class="menu-category"><i class="fas fa-coffee"></i> Sıcak İçecek</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Latte">
+                        <div class="menu-badge">Popüler</div>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Caramel Latte</h3>
+                        <p>Karamelli latte sanatı</p>
+                        <div class="menu-footer">
+                            <span class="menu-category"><i class="fas fa-mug-hot"></i> Espresso</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Waffle">
+                        <div class="menu-badge">Yeni</div>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Waffle & Kahvaltı</h3>
+                        <p>Taze meyve ve özel soslar</p>
+                        <div class="menu-footer">
+                            <span class="menu-category"><i class="fas fa-bread-slice"></i> Brunch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">
+                    <i class="fas fa-th-large"></i> Tüm Menüyü Görüntüle
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Gallery Preview -->
-    <section class="gallery-preview">
+    <section class="gallery-preview-section">
         <div class="container">
-            <h2 class="section-title">Atmosferimiz</h2>
-            <div class="gallery-grid-home">
-                <div class="gallery-item-home">
-                    <img src="https://via.placeholder.com/400x400/1a4d3a/ffffff?text=Dis+Gorunum" alt="Dış Görünüm">
+            <div class="section-header center">
+                <span class="section-label">Atmosferimiz</span>
+                <h2 class="section-title">Galeri</h2>
+            </div>
+            <div class="gallery-grid-preview">
+                <div class="gallery-item-preview" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600" alt="Cafe İç Görünüm">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
                 </div>
-                <div class="gallery-item-home">
-                    <img src="https://via.placeholder.com/400x400/2a6b50/ffffff?text=Ic+Mekan" alt="İç Mekan">
+                <div class="gallery-item-preview" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600" alt="Kahve Hazırlık">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
                 </div>
-                <div class="gallery-item-home">
-                    <img src="https://via.placeholder.com/400x400/d4a574/ffffff?text=Kahve" alt="Kahve">
+                <div class="gallery-item-preview" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600" alt="Açık Alan">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item-preview" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600" alt="Tatlılar">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
                 </div>
             </div>
-            <a href="galeri.html" class="btn-secondary">Tüm Galeriyi Gör</a>
+            <div class="gallery-cta">
+                <a href="gallery.html" class="btn btn-secondary">
+                    <i class="fas fa-images"></i> Tüm Galeriyi Gör
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Müşteri Yorumları</span>
+                <h2 class="section-title">Ne Diyorlar?</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Ankara'da gittiğim en iyi cafe! Kahveleri harika, atmosferi çok rahat. Özellikle dibek kahvesini tavsiye ederim."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ayşe K.</h4>
+                            <span>Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Canlı müzik gecelerini çok seviyoruz. Hem kaliteli kahve hem de güzel müzik... Ne istersin ki?"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Mehmet Y.</h4>
+                            <span>Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Serpme kahvaltısı muhteşem! Ailemle birlikte her hafta sonu geliyoruz. Personel çok ilgili ve güleryüzlü."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Zeynep A.</h4>
+                            <span>Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <h2>Sizi Bekliyoruz</h2>
-            <p>Her gün 06:00 - 00:00 saatleri arasında açığız</p>
-            <a href="iletisim.html" class="btn-primary">Bize Ulaşın</a>
+        <div class="cta-content">
+            <h2>Bizi Ziyaret Edin</h2>
+            <p>Her gün 06:00 - 00:00 arası sizleri bekliyoruz</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-map-marked-alt"></i> Yol Tarifi Al
+                </a>
+                <a href="tel:+903123353866" class="btn btn-outline-white">
+                    <i class="fas fa-phone-alt"></i> (0312) 335 38 66
+                </a>
+            </div>
         </div>
     </section>
 
@@ -98,28 +328,55 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>KAHVEHALL</h3>
-                    <p>Premium Cafe & Bistro</p>
+                    <div class="footer-logo">
+                        <i class="fas fa-coffee"></i>
+                        <span>KAHVEHALL</span>
+                    </div>
+                    <p>Ankara'nın en seçkin cafe ve bistrosu. Premium kahve deneyimi.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Hızlı Linkler</h4>
                     <ul>
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="menu.html">Menü</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="index.html"><i class="fas fa-angle-right"></i> Ana Sayfa</a></li>
+                        <li><a href="about.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
+                        <li><a href="menu.html"><i class="fas fa-angle-right"></i> Menü</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-angle-right"></i> Galeri</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>İletişim</h4>
-                    <p>Demetgül, Bağdat Cd. 26/B<br>06200 Yenimahalle/Ankara</p>
-                    <p>Tel: (0312) 335 38 66</p>
+                    <h4>Çalışma Saatleri</h4>
+                    <ul class="hours-list">
+                        <li><i class="far fa-clock"></i> Pazartesi - Pazar</li>
+                        <li><strong>06:00 - 00:00</strong></li>
+                        <li style="margin-top: 1rem;"><i class="fas fa-phone"></i> Rezervasyon:</li>
+                        <li><strong>(0312) 335 38 66</strong></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Adres</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Demetgül, Bağdat Cd. 26/B</li>
+                        <li>06200 Yenimahalle/Ankara</li>
+                        <li style="margin-top: 1rem;"><i class="fas fa-envelope"></i> info@kahvehall.com</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Kahvehall. Tüm hakları saklıdır.</p>
+                <p>&copy; 2025 Kahvehall. Tüm hakları saklıdır. | Tasarım: Premium Web Design</p>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
